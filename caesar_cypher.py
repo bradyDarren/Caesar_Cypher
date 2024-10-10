@@ -37,16 +37,14 @@ def decode(message, shift_number):
 
 def start():
     go_again = "yes"
-    while go_again == "yes":
+    while go_again != "no":
         user_choice = input("Type 'encode' to encrypt, type 'decode' to decrypt: ").lower()
         if user_choice == "encode":
             user_message = input("Type your message: ")
             user_shift = int(input("Type the shift number: "))
             result = encode(user_message, user_shift)
             print(f"Here is your encoded result: {result}")
-            go_again = input("Type 'yes' if you want to go agian. Otherwise type 'no'.").lower()
-            if go_again != "yes" or go_again != "no":
-                print("Please pick a appropriate selection")
+            go_again = input("Type 'yes' if you want to go agian. Otherwise type 'no'. ").lower()
         elif user_choice == "decode":
             user_message = input("Type your message: ")
             user_shift = int(input("Type the shift number: "))
@@ -56,8 +54,6 @@ def start():
         else:
             print("Please pick a appropriate selection")
             continue
-            
-        
 
 start()
 
