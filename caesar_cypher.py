@@ -18,5 +18,17 @@ def encode(message, shift_number):
             encoded_message += " "
     return encoded_message
 
+# test line
 print(encode("hello good sir",5))
 
+def decode(message, shift_number):
+    decoded_message = "" 
+    for letter in message: 
+        if letter in alpha_list: 
+            decoded_index = alpha_list.index(letter) - shift_number
+            decoded_message += alpha_list[decoded_index]
+        elif letter == " ":
+            decoded_message += " "
+    return decoded_message
+
+print(decode("mjqqt ltti xnw",5))
