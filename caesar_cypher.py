@@ -14,8 +14,8 @@ def encode(message, shift_number):
             if encoded_index > len(alpha_list):
                 encoded_index = encoded_index - len(alpha_list)
             encoded_message += alpha_list[encoded_index]
-        elif letter == " ":
-            encoded_message += " "
+        elif letter not in alpha_list:
+            encoded_message += letter     
     return encoded_message
 
 
@@ -28,8 +28,8 @@ def decode(message, shift_number):
         if letter in alpha_list: 
             decoded_index = alpha_list.index(letter) - shift_number
             decoded_message += alpha_list[decoded_index]
-        elif letter == " ":
-            decoded_message += " "
+        elif letter not in alpha_list:
+            decoded_message += letter
     return decoded_message
 
 # test line
